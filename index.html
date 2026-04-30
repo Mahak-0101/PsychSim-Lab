@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1628">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Tachistoscope Pro | Attention Testing Platform</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="assets/icon-192.svg">
+
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/lab.css">
+    <link rel="stylesheet" href="css/premium-layout.css">
+</head>
+<body data-theme="dark" class="dark-mode">
+    <div id="app-container">
+        <div id="canvas-container"></div>
+
+        <div id="welcome-screen" class="screen active">
+            <header class="premium-header">
+                <div class="header-content">
+                    <div class="brand-cluster">
+                        <div class="brand-mark">◎</div>
+                        <div class="brand-copy">
+                            <p class="eyebrow">Attention Testing Platform</p>
+                            <h1>Tachistoscope Pro</h1>
+                        </div>
+                    </div>
+
+                    <div class="header-actions">
+                        <span class="header-pill">Browser-Based Assessments</span>
+                        <button id="theme-toggle" class="btn btn-ghost btn-sm" type="button">
+                            <span id="theme-icon">☾</span>
+                            <span class="btn-label" data-theme-label>Dark</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="welcome-container">
+                <section class="hero-section">
+                    <div class="hero-copy">
+                        <span class="eyebrow">Sellable cognitive testing workflow</span>
+                        <h2 class="hero-title">Run paid attention assessments from a single browser.</h2>
+                        <p class="hero-subtitle">
+                            Deliver branded tachistoscope sessions, cohort comparisons, and exportable reports
+                            from one polished web app built for colleges, coaching centers, and independent labs.
+                        </p>
+
+                        <div class="hero-tags">
+                            <span class="hero-tag">Cohort analytics</span>
+                            <span class="hero-tag">Branded exports</span>
+                            <span class="hero-tag">Offline-ready install</span>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <button id="start-btn" class="btn btn-primary btn-lg" type="button">Launch Demo Session</button>
+                            <button id="pricing-btn" class="btn btn-secondary btn-lg" type="button">View Pricing Ideas</button>
+                            <button id="dashboard-btn" class="btn btn-ghost btn-lg" type="button">See the Dashboard</button>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="visual-ring ring-one"></div>
+                        <div class="visual-ring ring-two"></div>
+                        <div class="visual-ring ring-three"></div>
+                        <div class="signal-node node-one"></div>
+                        <div class="signal-node node-two"></div>
+                        <div class="signal-node node-three"></div>
+
+                        <div class="visual-panel">
+                            <div class="panel-kicker">Product Preview</div>
+                            <div class="visual-monitor">
+                                <div class="monitor-header">
+                                    <span>Digital Assessment Studio</span>
+                                    <span>Ready to Sell</span>
+                                </div>
+                                <div class="monitor-screen">A 7 ✦ B</div>
+                                <div class="monitor-grid">
+                                    <div class="readout-card">
+                                        <span>Exposure</span>
+                                        <strong>0.10-1.00s</strong>
+                                    </div>
+                                    <div class="readout-card">
+                                        <span>Stimuli</span>
+                                        <strong>Letters to Words</strong>
+                                    </div>
+                                    <div class="readout-card">
+                                        <span>Analysis</span>
+                                        <strong>Span + Accuracy</strong>
+                                    </div>
+                                    <div class="readout-card">
+                                        <span>Mode</span>
+                                        <strong>Solo / Cohort / Campus</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="metrics-strip">
+                    <article class="metric-card">
+                        <span class="metric-label">Experiments Completed</span>
+                        <span class="metric-number" id="stat-experiments">0</span>
+                        <p>Your saved local sessions build a personal benchmark over time.</p>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Average Span</span>
+                        <span class="metric-number" id="stat-avg-span">0</span>
+                        <p>Track how many distinct items you can grasp in a single glance.</p>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Best Accuracy</span>
+                        <span class="metric-number" id="stat-accuracy">0%</span>
+                        <p>See your strongest recall performance across every saved attempt.</p>
+                    </article>
+                </section>
+
+                <section class="student-section surface-card">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Product Setup</span>
+                            <h3>Brand your reports before you start</h3>
+                        </div>
+                        <p>We save this locally so exported reports, cohort history, and repeat sessions feel client-ready from the first run.</p>
+                    </div>
+
+                    <div class="student-grid">
+                        <div class="form-group">
+                            <label for="student-name">Participant / Client Name</label>
+                            <input type="text" id="student-name" class="input-field" placeholder="Enter the learner or client name">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-id">Learner / Client ID</label>
+                            <input type="text" id="student-id" class="input-field" placeholder="Optional invoice, roll, or client ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="institution-name">Institution / Coaching Brand</label>
+                            <input type="text" id="institution-name" class="input-field" placeholder="Your academy, lab, or clinic name">
+                        </div>
+                        <div class="form-group">
+                            <label for="cohort-name">Cohort / Batch</label>
+                            <input type="text" id="cohort-name" class="input-field" placeholder="Example: BSc Psych 2026">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Report Email</label>
+                            <input type="email" id="contact-email" class="input-field" placeholder="Optional contact for exports">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="theory-anchor" class="insight-grid">
+                    <article class="glass-card">
+                        <span class="card-kicker">What it measures</span>
+                        <h4>Span of Attention</h4>
+                        <p>
+                            A tachistoscope reveals how many visual elements the mind can register and report
+                            after a very brief exposure, before conscious rehearsal takes over.
+                        </p>
+                    </article>
+                    <article class="glass-card">
+                        <span class="card-kicker">Why it matters</span>
+                        <h4>Perception Under Pressure</h4>
+                        <p>
+                            The task highlights limits in immediate apprehension, helping learners connect
+                            concentration, stimulus complexity, and timing with real cognitive performance.
+                        </p>
+                    </article>
+                    <article class="glass-card">
+                        <span class="card-kicker">What you get</span>
+                        <h4>Beautifully Explained Results</h4>
+                        <p>
+                            Each run ends with analytics, insights, and an instructional summary that makes
+                            the experiment feel both scientific and rewarding to explore.
+                        </p>
+                    </article>
+                </section>
+
+                <section class="workflow-section surface-card">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Flow of the experiment</span>
+                            <h3>From setup to insight in four stages</h3>
+                        </div>
+                    </div>
+
+                    <div class="workflow-grid">
+                        <article class="workflow-step">
+                            <span class="workflow-number">01</span>
+                            <h4>Configure</h4>
+                            <p>Choose timing, trial count, difficulty behavior, and stimulus format.</p>
+                        </article>
+                        <article class="workflow-step">
+                            <span class="workflow-number">02</span>
+                            <h4>Observe</h4>
+                            <p>Watch the stimulus appear briefly in the virtual tachistoscope space.</p>
+                        </article>
+                        <article class="workflow-step">
+                            <span class="workflow-number">03</span>
+                            <h4>Recall</h4>
+                            <p>Respond immediately while memory is still fresh and attention is active.</p>
+                        </article>
+                        <article class="workflow-step">
+                            <span class="workflow-number">04</span>
+                            <h4>Interpret</h4>
+                            <p>Review the dashboard, theory notes, and exportable learning materials.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="pricing-anchor" class="product-section surface-card">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Monetization Paths</span>
+                            <h3>Three clean offers you can sell from this product</h3>
+                        </div>
+                        <p>These are sample price anchors to help you position the app. Adjust them for your market, audience, and delivery style.</p>
+                    </div>
+
+                    <div class="offer-grid">
+                        <article class="offer-card">
+                            <span class="card-kicker">Offer 01</span>
+                            <h4>Paid Individual Assessments</h4>
+                            <p class="offer-price">$9-$29 <span>per report</span></p>
+                            <p>Sell quick cognitive attention checks to students, job seekers, or coaching clients who want a polished one-on-one experience.</p>
+                            <ul class="compact-list">
+                                <li>Ideal for solo sessions or walk-in demos.</li>
+                                <li>Use branded PDF and CSV exports as the deliverable.</li>
+                                <li>Bundle interpretation plus one retest for a higher ticket.</li>
+                            </ul>
+                        </article>
+
+                        <article class="offer-card offer-card-featured">
+                            <span class="card-kicker">Offer 02</span>
+                            <h4>Coaching Center Cohorts</h4>
+                            <p class="offer-price">$99-$249 <span>per batch</span></p>
+                            <p>Run multiple learners through the same flow, compare cohort performance, and hand back exportable progress reports to parents or instructors.</p>
+                            <ul class="compact-list">
+                                <li>Charge per batch, workshop, or monthly analytics package.</li>
+                                <li>Use cohort labels to segment premium and standard groups.</li>
+                                <li>Turn repeat sessions into retention revenue.</li>
+                            </ul>
+                        </article>
+
+                        <article class="offer-card">
+                            <span class="card-kicker">Offer 03</span>
+                            <h4>Institution Licenses</h4>
+                            <p class="offer-price">$499-$1,999 <span>per year</span></p>
+                            <p>Pitch the product as a browser-based psychology lab tool for colleges that want a modern alternative to static practical demonstrations.</p>
+                            <ul class="compact-list">
+                                <li>Sell setup, faculty onboarding, and branded templates.</li>
+                                <li>Position offline installability as a campus-friendly feature.</li>
+                                <li>Use exports plus cohort metrics to justify renewals.</li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="dashboard-anchor" class="ops-grid">
+                    <article class="surface-card dashboard-panel">
+                        <div class="section-heading">
+                            <div>
+                                <span class="eyebrow">Institution Snapshot</span>
+                                <h3>Live business dashboard</h3>
+                            </div>
+                            <p>Every saved run becomes reusable proof for buyer demos, teacher reporting, and cohort upsells.</p>
+                        </div>
+
+                        <div class="dashboard-metrics">
+                            <div class="dashboard-stat">
+                                <span class="dashboard-label">Total Sessions</span>
+                                <strong id="dashboard-total-sessions">0</strong>
+                            </div>
+                            <div class="dashboard-stat">
+                                <span class="dashboard-label">Active Learners</span>
+                                <strong id="dashboard-active-learners">0</strong>
+                            </div>
+                            <div class="dashboard-stat">
+                                <span class="dashboard-label">Tracked Cohorts</span>
+                                <strong id="dashboard-cohorts">0</strong>
+                            </div>
+                            <div class="dashboard-stat">
+                                <span class="dashboard-label">Avg Accuracy</span>
+                                <strong id="dashboard-avg-accuracy">0%</strong>
+                            </div>
+                        </div>
+
+                        <div id="dashboard-badges" class="insight-chip-row"></div>
+                    </article>
+
+                    <article class="surface-card leaderboard-panel">
+                        <div class="section-heading">
+                            <div>
+                                <span class="eyebrow">Proof of Performance</span>
+                                <h3>Top saved sessions</h3>
+                            </div>
+                            <p>Use this ranking as a simple demo of repeatable analytics, not just one-off results.</p>
+                        </div>
+
+                        <div id="leaderboard-list" class="leaderboard-list">
+                            <p class="text-muted">Leaderboard entries appear automatically after your first sessions.</p>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="surface-card history-panel">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Session Library</span>
+                            <h3>Recent participant records</h3>
+                        </div>
+                        <p>This turns the app into a reusable product archive instead of a throwaway single-session demo.</p>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Participant</th>
+                                    <th>Institution</th>
+                                    <th>Cohort</th>
+                                    <th>Accuracy</th>
+                                    <th>Avg Span</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="session-history-body">
+                                <tr>
+                                    <td colspan="6" class="table-empty-state">No saved sessions yet.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="config-screen" class="screen">
+            <header class="premium-header">
+                <div class="header-content">
+                    <div class="brand-copy">
+                        <p class="eyebrow">Experiment Builder</p>
+                        <h2>Shape your upcoming session</h2>
+                    </div>
+
+                    <div class="header-actions">
+                        <span class="header-pill">Recommended: 0.3s + 10 trials</span>
+                        <button id="theme-toggle-config" class="btn btn-ghost btn-sm" type="button">
+                            <span id="theme-icon-config">☾</span>
+                            <span class="btn-label" data-theme-label>Dark</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="config-container">
+                <section class="config-banner surface-card">
+                    <div>
+                        <span class="eyebrow">Calibration</span>
+                        <h3>Dial in the experience you want</h3>
+                    </div>
+                    <p>
+                        Choose a preset to get moving quickly, or fine-tune each setting for a more custom run.
+                    </p>
+                </section>
+
+                <section class="preset-bar surface-card">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Quick Start</span>
+                            <h3>Use a ready-made session preset</h3>
+                        </div>
+                        <p>These presets are designed to feel calmer and easier to start with.</p>
+                    </div>
+
+                    <div class="preset-grid">
+                        <button class="preset-btn" data-preset="practice" type="button">
+                            <span class="preset-name">Practice</span>
+                            <span class="preset-meta">0.5s • 6 trials • letters</span>
+                            <span class="preset-copy">Slower pacing for first-time users.</span>
+                        </button>
+                        <button class="preset-btn" data-preset="balanced" type="button">
+                            <span class="preset-name">Balanced</span>
+                            <span class="preset-meta">0.3s • 10 trials • letters</span>
+                            <span class="preset-copy">The smooth default for regular classroom use.</span>
+                        </button>
+                        <button class="preset-btn" data-preset="challenge" type="button">
+                            <span class="preset-name">Challenge</span>
+                            <span class="preset-meta">0.1s • 12 trials • mixed</span>
+                            <span class="preset-copy">Quicker exposure with adaptive difficulty.</span>
+                        </button>
+                    </div>
+                </section>
+
+                <div class="config-grid">
+                    <div class="config-column">
+                        <section class="config-card">
+                            <span class="card-kicker">Timing</span>
+                            <h4>Exposure Time</h4>
+                            <p class="text-small">How long the stimulus remains visible.</p>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="exposure-time" value="0.1">
+                                    <div class="radio-content">
+                                        <span class="radio-label">0.1 seconds</span>
+                                        <span class="radio-desc">Very demanding, ideal for advanced runs.</span>
+                                    </div>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="exposure-time" value="0.3" checked>
+                                    <div class="radio-content">
+                                        <span class="radio-label">0.3 seconds</span>
+                                        <span class="radio-desc">Best balance of challenge and readability.</span>
+                                    </div>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="exposure-time" value="0.5">
+                                    <div class="radio-content">
+                                        <span class="radio-label">0.5 seconds</span>
+                                        <span class="radio-desc">A steadier pace for practice and demos.</span>
+                                    </div>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="exposure-time" value="1.0">
+                                    <div class="radio-content">
+                                        <span class="radio-label">1.0 seconds</span>
+                                        <span class="radio-desc">Longer exposure for introductory sessions.</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </section>
+
+                        <section class="config-card">
+                            <span class="card-kicker">Difficulty Logic</span>
+                            <h4>Experiment Mode</h4>
+                            <p class="text-small">Choose a stable run or let the task respond to performance.</p>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="experiment-mode" value="standard" checked>
+                                    <div class="radio-content">
+                                        <span class="radio-label">Standard</span>
+                                        <span class="radio-desc">Fixed parameters throughout the session.</span>
+                                    </div>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="experiment-mode" value="adaptive">
+                                    <div class="radio-content">
+                                        <span class="radio-label">Adaptive</span>
+                                        <span class="radio-desc">Difficulty rises or relaxes after each response.</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="config-column">
+                        <section class="config-card">
+                            <span class="card-kicker">Session Length</span>
+                            <h4>Number of Trials</h4>
+                            <p class="text-small">Balance quick practice with fuller analysis.</p>
+                            <input type="number" id="num-trials" min="3" max="20" value="10" class="input-field" placeholder="10">
+
+                            <div class="trial-slider">
+                                <input type="range" id="trial-slider" class="slider" min="3" max="20" value="10" aria-label="Adjust number of trials">
+                                <div class="slider-labels">
+                                    <span>3</span>
+                                    <span id="slider-value">10</span>
+                                    <span>20</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="config-card">
+                            <span class="card-kicker">Stimulus Design</span>
+                            <h4>Stimulus Type</h4>
+                            <p class="text-small">Switch between simple symbols and more semantic material.</p>
+                            <div class="stimulus-buttons">
+                                <label class="stimulus-btn">
+                                    <input type="radio" name="stimulus-type" value="letters" checked>
+                                    <span>Letters</span>
+                                </label>
+                                <label class="stimulus-btn">
+                                    <input type="radio" name="stimulus-type" value="numbers">
+                                    <span>Numbers</span>
+                                </label>
+                                <label class="stimulus-btn">
+                                    <input type="radio" name="stimulus-type" value="shapes">
+                                    <span>Shapes</span>
+                                </label>
+                                <label class="stimulus-btn">
+                                    <input type="radio" name="stimulus-type" value="words">
+                                    <span>Words</span>
+                                </label>
+                                <label class="stimulus-btn">
+                                    <input type="radio" name="stimulus-type" value="mixed">
+                                    <span>Mixed</span>
+                                </label>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <section class="config-notes surface-card">
+                    <div class="note-card">
+                        <span class="card-kicker">Suggested for class use</span>
+                        <h4>0.3 seconds, 10 trials, letters</h4>
+                        <p>A balanced setup that usually produces informative results without overwhelming first-time participants.</p>
+                    </div>
+                    <div class="note-card">
+                        <span class="card-kicker">Suggested for challenge runs</span>
+                        <h4>0.1 seconds, adaptive mode, mixed stimuli</h4>
+                        <p>Faster presentations and adaptive difficulty push immediate apprehension to its limit.</p>
+                    </div>
+                </section>
+
+                <div class="config-actions">
+                    <button id="back-btn" class="btn btn-ghost btn-lg" type="button">Back</button>
+                    <button id="reset-btn" class="btn btn-secondary btn-lg" type="button">Reset</button>
+                    <button id="start-test-btn" class="btn btn-primary btn-lg" type="button">Start Session</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="lab-screen" class="screen">
+            <div class="lab-container">
+                <div class="lab-header">
+                    <div class="header-left">
+                        <span class="lab-kicker">Live Session</span>
+                        <h3 id="trial-counter">Trial 1/10</h3>
+                        <div class="progress-bar">
+                            <div id="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="metric-badge">
+                            <span class="badge-label">Accuracy</span>
+                            <span class="badge-value" id="accuracy-display">0%</span>
+                        </div>
+                        <div class="metric-badge">
+                            <span class="badge-label">Exposure</span>
+                            <span class="badge-value" id="exposure-display">0.30s</span>
+                        </div>
+                        <div class="metric-badge metric-badge-wide">
+                            <span class="badge-label">Difficulty</span>
+                            <span class="badge-value badge-value-small" id="difficulty-display">Standard • 5 items</span>
+                        </div>
+                        <button id="lab-exit-btn" class="btn btn-ghost btn-sm" type="button">Exit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="response-screen" class="screen">
+            <div class="response-shell">
+                <div class="response-panel">
+                    <div class="response-header">
+                        <span class="eyebrow">Immediate Recall</span>
+                        <h2>What did you see?</h2>
+                        <p id="stimulus-hint">Enter the items you perceived in order.</p>
+                    </div>
+
+                    <div class="response-input-area">
+                        <input type="text" id="response-input" class="response-input" placeholder="Type your response..." autocomplete="off">
+                        <small class="text-muted">Press Enter or use the submit button to record your recall.</small>
+                    </div>
+
+                    <div class="response-shortcuts">
+                        <span class="shortcut-chip">Enter submits</span>
+                        <span class="shortcut-chip">Partial answers are okay</span>
+                        <span class="shortcut-chip">Skip if you truly saw nothing</span>
+                    </div>
+
+                    <div id="response-feedback" class="feedback-box" aria-live="polite">
+                        <p id="feedback-message"></p>
+                    </div>
+
+                    <div class="response-actions">
+                        <button id="submit-response-btn" class="btn btn-primary btn-lg" type="button" disabled>Submit Response</button>
+                        <button id="skip-trial-btn" class="btn btn-secondary btn-lg" type="button">Skip Trial</button>
+                    </div>
+                </div>
+
+                <aside class="response-aside surface-card">
+                    <span class="card-kicker">Recall Tips</span>
+                    <h3>Stay with the first impression</h3>
+                    <p>Immediate responses usually reflect the true span of attention better than second-guessing.</p>
+                    <ul class="compact-list">
+                        <li>Keep the item order if you can.</li>
+                        <li>Enter partial recall instead of hesitating too long.</li>
+                        <li>Watch how accuracy changes as stimuli grow denser.</li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+
+        <div id="results-screen" class="screen">
+            <div class="results-container">
+                <div class="results-header">
+                    <span class="eyebrow">Performance Dashboard</span>
+                    <h1>Experiment Results</h1>
+                    <p class="text-muted">A polished readout of how your perception responded under brief visual exposure.</p>
+                </div>
+
+                <div class="results-summary">
+                    <article class="summary-card">
+                        <span class="summary-icon">⦿</span>
+                        <div>
+                            <span class="summary-label">Total Trials</span>
+                            <span class="summary-value" id="result-total-trials">0</span>
+                        </div>
+                    </article>
+                    <article class="summary-card">
+                        <span class="summary-icon">◎</span>
+                        <div>
+                            <span class="summary-label">Overall Accuracy</span>
+                            <span class="summary-value" id="result-accuracy">0%</span>
+                        </div>
+                    </article>
+                    <article class="summary-card">
+                        <span class="summary-icon">◌</span>
+                        <div>
+                            <span class="summary-label">Average Span</span>
+                            <span class="summary-value" id="result-avg-span">0</span>
+                        </div>
+                    </article>
+                    <article class="summary-card">
+                        <span class="summary-icon">↯</span>
+                        <div>
+                            <span class="summary-label">Avg Reaction Time</span>
+                            <span class="summary-value" id="result-avg-time">0ms</span>
+                        </div>
+                    </article>
+                    <article class="summary-card">
+                        <span class="summary-icon">▲</span>
+                        <div>
+                            <span class="summary-label">Best Span</span>
+                            <span class="summary-value" id="result-best-span">0</span>
+                        </div>
+                    </article>
+                    <article class="summary-card">
+                        <span class="summary-icon">≋</span>
+                        <div>
+                            <span class="summary-label">Order Match</span>
+                            <span class="summary-value" id="result-order-match">0%</span>
+                        </div>
+                    </article>
+                </div>
+
+                <section class="comparison-section">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Benchmarking</span>
+                            <h3 id="cohort-context-title">How this session compares</h3>
+                        </div>
+                        <p id="cohort-context-copy">Complete a few sessions to unlock cohort and institution comparisons.</p>
+                    </div>
+                    <div id="cohort-context-badges" class="comparison-grid">
+                        <div class="comparison-pill">
+                            <span>Status</span>
+                            <strong>Waiting for saved history</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="charts-section">
+                    <section class="chart-container">
+                        <h3>Performance Trend</h3>
+                        <canvas id="performance-chart"></canvas>
+                    </section>
+                    <section class="chart-container">
+                        <h3>Correct vs Incorrect</h3>
+                        <canvas id="accuracy-pie-chart"></canvas>
+                    </section>
+                </div>
+
+                <section class="table-section">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Detailed Readout</span>
+                            <h3>Trial-by-trial breakdown</h3>
+                        </div>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Trial</th>
+                                    <th>Stimulus</th>
+                                    <th>Response</th>
+                                    <th>Status</th>
+                                    <th>Accuracy</th>
+                                    <th>Reaction Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-tbody"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="insights-section">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Interpretation</span>
+                            <h3>Smart insights from your session</h3>
+                        </div>
+                    </div>
+                    <div id="insights-container" data-insights-container></div>
+                </section>
+
+                <div class="theory-section-container">
+                    <section class="theory-box">
+                        <span class="card-kicker">Conclusion</span>
+                        <h3>Your take-away</h3>
+                        <p id="conclusion-text" class="conclusion-text">Analyzing your performance...</p>
+                    </section>
+                    <section class="theory-box">
+                        <span class="card-kicker">Scientific Context</span>
+                        <h3>Why these results matter</h3>
+                        <div id="theory-section" class="theory-content">Loading theory content...</div>
+                    </section>
+                </div>
+
+                <section class="export-section">
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">Share and Archive</span>
+                            <h3>Export your results</h3>
+                        </div>
+                        <p>CSV and JSON are available in this build. PDF and Excel activate automatically when their libraries are bundled.</p>
+                    </div>
+                    <div class="export-buttons">
+                        <button id="export-pdf" class="btn btn-secondary" type="button">PDF Report</button>
+                        <button id="export-excel" class="btn btn-secondary" type="button">Excel</button>
+                        <button id="export-csv" class="btn btn-secondary" type="button">CSV</button>
+                        <button id="export-json" class="btn btn-secondary" type="button">JSON</button>
+                        <button id="print-btn" class="btn btn-ghost" type="button">Print</button>
+                    </div>
+                </section>
+
+                <div class="results-actions">
+                    <button id="continue-to-summary-btn" class="btn btn-primary btn-lg" type="button">View Learning Summary</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="summary-screen" class="screen">
+            <div class="summary-container">
+                <div class="summary-header">
+                    <span class="eyebrow">Learning Summary</span>
+                    <h1>Understand your span of attention</h1>
+                    <p>The final screen turns raw performance into classroom-friendly interpretation.</p>
+                </div>
+
+                <div class="summary-content">
+                    <section class="glass-card summary-spotlight">
+                        <span class="card-kicker">Key Results</span>
+                        <h3>Your attention profile</h3>
+                        <div class="summary-stats">
+                            <div class="stat">
+                                <span class="stat-label">Average Span</span>
+                                <span class="stat-value" id="summary-span">0 items</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Best Span</span>
+                                <span class="stat-value" id="summary-best-span">0</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Order Match</span>
+                                <span class="stat-value" id="summary-order-match">0%</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Learning Gain</span>
+                                <span class="stat-value" id="summary-learning-gain">0%</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Mode Used</span>
+                                <span class="stat-value" id="summary-mode">Standard</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="glass-card">
+                        <span class="card-kicker">Observations</span>
+                        <h3>Patterns worth noticing</h3>
+                        <div id="summary-insights-container" class="insights-list" data-insights-container></div>
+                    </section>
+
+                    <section class="glass-card">
+                        <span class="card-kicker">Psychology Context</span>
+                        <h3>What the experiment teaches</h3>
+                        <p>
+                            Span of attention reflects how many distinct elements can be consciously grasped in
+                            one brief exposure. In many settings, the range falls near 4 to 7 items, though
+                            familiarity, focus, and exposure duration shift that boundary.
+                        </p>
+                        <ul class="theory-factors-list">
+                            <li><strong>Exposure duration:</strong> Longer visibility usually supports stronger recall.</li>
+                            <li><strong>Stimulus complexity:</strong> Words and mixed symbols ask more of perception than isolated letters.</li>
+                            <li><strong>Attention control:</strong> Momentary concentration shapes both accuracy and order memory.</li>
+                            <li><strong>Practice effects:</strong> Repeated trials can produce measurable learning gains.</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="summary-actions">
+                    <button id="restart-btn" class="btn btn-primary btn-lg" type="button">Run Another Test</button>
+                    <button id="exit-btn" class="btn btn-secondary btn-lg" type="button">Exit Lab</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay" aria-hidden="true">
+        <div class="spinner"></div>
+        <p>Initializing Virtual Lab...</p>
+    </div>
+
+    <script src="lib/three.min.js"></script>
+    <script src="lib/chart.min.js"></script>
+
+    <script src="js/data.js"></script>
+    <script src="js/scene.js"></script>
+    <script src="js/tachistoscope.js"></script>
+    <script src="js/export.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/experiment.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/premium-ui.js"></script>
+    <script src="js/main-premium.js"></script>
+</body>
+</html>

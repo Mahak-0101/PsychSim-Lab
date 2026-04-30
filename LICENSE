@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Mahak Saxena
+Copyright (c) 2024 3D Psychology Virtual Lab Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,29 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+TERMS OF USE:
+
+1. Educational Use: This software is provided for educational purposes. 
+   Teachers and students may use this freely in academic settings.
+
+2. Research: While this can be used as a basis for psychology research, 
+   researchers should validate results with professional psychology assessment tools.
+
+3. No Medical Use: This software should NOT be used for clinical diagnosis, 
+   treatment, or medical purposes. Consult a licensed psychologist for professional assessment.
+
+4. Attribution: If you use this in publications or share modifications, 
+   please provide attribution to the original project.
+
+5. Modifications: You are free to modify the code for educational and 
+   non-commercial purposes.
+
+---
+
+For commercial licensing or special requests, please contact:
+support@example.com
+
+This software is provided as-is without any warranties or guarantees.

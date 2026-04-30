@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  tachistoscope:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    container_name: tachistoscope-lab
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+# Usage:
+# docker-compose up          # Start the service
+# docker-compose down        # Stop the service
+# docker-compose logs -f     # View logs

@@ -1,0 +1,41 @@
+{
+  "name": "tachistoscope-virtual-lab",
+  "version": "1.1.0",
+  "description": "Tachistoscope Pro - browser-based attention testing platform with cohort analytics",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 8000 -o",
+    "server": "http-server -p 8000",
+    "dev": "http-server -p 8000 -o -c-1",
+    "build": "echo 'No build required for this project'",
+    "test": "echo 'No tests configured'",
+    "setup": "bash setup.sh"
+  },
+  "keywords": [
+    "psychology",
+    "virtual-lab",
+    "tachistoscope",
+    "attention",
+    "perception",
+    "experiment",
+    "3d",
+    "education"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.2"
+  },
+  "dependencies": {
+    "three": "^r128",
+    "chart.js": "^3.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/tachistoscope.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/tachistoscope/issues"
+  },
+  "homepage": "https://github.com/yourusername/tachistoscope#readme"
+}
