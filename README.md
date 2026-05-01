@@ -397,7 +397,7 @@ Retrieved from https://github.com/yourusername/tachistoscope
 
 For issues, questions, or suggestions:
 - Open an issue on GitHub
-- Email: support@example.com
+- Email: saxenamahak612@gmail.com
 - Documentation: See README sections above
 
 ## Disclaimer
